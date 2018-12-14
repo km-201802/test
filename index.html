@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>algoritmos</title>
+    </head>
+    <body>
+        <style type="text/css" media="all">
+            .dv1, .dv2, .dv3, .dv4, .dv5, .dv6, .dv7{
+            }
+            .dv1{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv2{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv3{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv4{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv5{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv6{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv7{
+                width: 50px;
+                height: 50px;
+                background: black;
+                display: inline-block;
+            }
+            .dv{
+                
+                position: absolute;
+                top: 2
+                top:200px;
+                
+            }
+        </style>
+    
+            <div class="dv1" id="dv1"></div>
+        
+        
+        <script type="text/javascript" charset="utf-8">
+        var sz = 50;
+        var ft = 0;
+            /*for(ft=0; ft<8; ft++){
+                document.getElementById("dv"+ft).style.height=sz+"px";
+                
+                sz=sz+50;
+                //if(ft=7){alert();}
+            }*/
+            for(var p=1; p<5000; p++){
+                var divs = document.createElement("div");
+                var divv = document.getElementById("div1");
+                divs.setAttribute("id", "dv"+p);
+                document.body.insertBefore(divs, divv); 
+                var hs = document.getElementById("dv"+p);
+                hs.style.height="3px";
+                hs.style.width="3px";
+                hs.style.background="white";
+                hs.style.display="inline-block";
+                hs.style.borderTop="3px solid red";
+
+                
+            }
+            function fu(){
+                ft++;
+                document.getElementById("dv"+ft).style.height=sz+"px";
+                sz=sz+3;
+            }
+            fu();
+            setInterval(fu, 1);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
