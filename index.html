@@ -71,27 +71,35 @@
                 sz=sz+50;
                 //if(ft=7){alert();}
             }*/
-            for(var p=1; p<5000; p++){
+            for(var p=1; p<720; p++){
                 var divs = document.createElement("div");
                 var divv = document.getElementById("div1");
                 divs.setAttribute("id", "dv"+p);
                 document.body.insertBefore(divs, divv); 
                 var hs = document.getElementById("dv"+p);
-                hs.style.height="3px";
-                hs.style.width="3px";
-                hs.style.background="white";
+                hs.style.height="2px";
+                hs.style.width="2px";
+                hs.style.background="black";
                 hs.style.display="inline-block";
-                hs.style.borderTop="3px solid red";
+                hs.style.position="relative";
+                hs.style.top="1000px";
+                var dospi = Math.PI*2;
+                var uno = p/360;
+                var fss = uno*dospi;
+                
+                var ty = Math.cos(fss)*100;
+                document.getElementById("dv"+p).style.top=ty+100+"px";
+                //hs.style.borderTop="3px solid red";
 
                 
             }
-            function fu(){
+            /*function fu(){
                 ft++;
-                document.getElementById("dv"+ft).style.height=sz+"px";
+                document.getElementById("dv"+ft).style.top=sz+"px";
                 sz=sz+3;
             }
             fu();
-            setInterval(fu, 1);
+            setInterval(fu, 1);*/
         </script>
     </body>
 </html>
