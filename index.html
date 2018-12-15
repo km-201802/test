@@ -14,7 +14,7 @@
 		text-decoration: none;
 	}
 	body{
-		/* overflow: hidden; */
+		overflow: hidden;
 	}
 	.cv{
 		border: 1px solid black;
@@ -34,7 +34,7 @@
 		.ver{
 			display:block;
 			position: fixed;
-
+	
 			width: 100%;
 			height: 100vh;
 			z-index: 1;
@@ -42,19 +42,69 @@
 			background-size: cover;
 			background-position: center; 
 		}
-		
 	}
-
+	.bt{
+		display: block;
+		position: relative;
+		margin: 5px 0;
+		padding: 10px;
+		cursor: pointer;
+	}
 
 	</style>
 	<div class="ver" id="ver"></div>
-	<div class="dv1"><canvas class="cv" id="cv" width="1000px" height="500px"></canvas></div>
+	<div id="dv1" class="dv1">
+		<canvas class="cv" id="cv" width="1000px" height="500px"></canvas>
+		<input type="button" value="PANTALLA CONPLETA" id="bt" class="bt" onclick="pt()"/>
+	</div>
 
 		
 	<script>
-		
-		var c = document.getElementById("cv");
+		var conten = document.querySelector("#dv1");
+		var c = document.querySelector("#cv");
+		var bt = document.getElementById("bt");
+		function pt() {
+			conten.style.width="100%";
+			conten.style.height="100vh";
+			conten.style.margin="0";
+
+			c.style.height="100vh";
+			c.style.width="100%";
+			c.style.backgroundSize="cover";
+			c.style.backgroundRepeat="no-repeat";
+
+			bt.innerHTML="salir";
+			bt.style.position="fixed";
+			bt.style.top="10px"
+			bt.style.left="10px";
+			bt.style.zIndex="1";
+
+			bt.setAttribute("onclick","reducir()");
+
+		}
+		function reducir() {
+			conten.style.width="1000px";
+			conten.style.height="500px";
+			conten.style.margin="5vh auto";
+
+			c.style.height="500px";
+			c.style.width="1000px";
+			//c.style.backgroundSize="cover";
+			//c.style.backgroundRepeat="no-repeat";
+
+			bt.innerHTML="PANTALLA COMPLETA";
+			bt.style.position="relative";
+			bt.style.top="0"
+			bt.style.left="0";
+			bt.style.zIndex="0";
+
+			bt.setAttribute("onclick","pt()");
+
+		}
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		var ctx = c.getContext("2d");
+		console.log("ctx",ctx);
 		var width = c.width;
 		var height = c.height;
 
